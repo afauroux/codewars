@@ -1,28 +1,52 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<layout>
+  <h1 slot="header">Le titre de ma page</h1>
+  <grid class="grid"/>
+  <textarea slot="footer" name="console" id="cmd" >type code here...</textarea>
+
+
+</layout>
+
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import Layout from "./components/Layout.vue";
+import Grid from "./components/Grid.vue";
 export default {
   name: "app",
   components: {
-    HelloWorld
+    Layout,
+    Grid
   }
 };
 </script>
 
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style  >
+body {
+  overscroll-behavior: none;
+}
+header {
+  background-color: aquamarine;
+}
+footer {
+  display: flex;
+}
+footer > textarea {
+  flex: 1;
+}
+nav {
+  background-color: blanchedalmond;
+}
+aside {
+  background-color: antiquewhite;
+}
+main {
+  display: flex;
+}
+main > canvas {
+  flex: 1;
+  border: 1px solid gray;
 }
 </style>
+
+
